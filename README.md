@@ -1,65 +1,53 @@
 # knockout-js-object-wrapper README
 
-This is the README for your extension "knockout-js-object-wrapper". After writing up a brief description, we recommend including the following sections.
+If you're using TypeScript, remove TypeScript annotation from the object you want to wrap. Next, select a JavaScript object, making sure not to select code that surrounds the object -- other than its declaration and its terminating semicolon/newline. Finally, execute the command "Wrap Javascript object in Knockout.js". If you'd like to add functionality, feel free to create a pull request.
 
-## Features
+The extension will wrap every value in the appropriate Knockout.js observable and paste the result below the object you selected. If you execute the extension on this code:
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+```JavaScript
+const obj = {
+    key: "string",
+    key2: 0,
+    key3: [
+        "1"
+    ],
+    key4: {
+      innerKey: "value",
+    },
+}
+```
 
-For example if there is an image subfolder under your extension project workspace:
+the result will be
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+```JavaScript
+const obj = {
+    key: "string",
+    key2: 0,
+    key3: [
+        "1"
+    ],
+    key4: {
+      innerKey: "value",
+    },
+    key5: [
+      {
+        innerKey: true,
+      },
+    ],
+}
+const obj = const obj = {
+    key: ko.observable("string"),
+    key2: ko.observable(0),
+    key3: ko.observableArray([
+        "1"
+    ]),
+    key4: ko.observable({
+      innerKey: ko.observable("value"),
+    }),
+    key5: ko.observableArray([
+      {
+        innerKey: ko.observable(true),
+      },
+    ]),
+}
+```
