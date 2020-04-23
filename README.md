@@ -1,8 +1,8 @@
 # knockout-js-object-wrapper README
 
-If you're using TypeScript, remove TypeScript annotation from the object you want to wrap. Next, select a JavaScript object, making sure not to select code that surrounds the object -- other than its declaration and its terminating semicolon/newline. Finally, execute the command "Wrap Javascript object in Knockout.js". If you'd like to add functionality, feel free to create a pull request.
+If you're using TypeScript, remove TypeScript annotation from the object you want to wrap. Next, select a JavaScript object, making sure not to select code that surrounds the object -- other than its declaration and its terminating semicolon/newline. Finally, execute the command "Wrap Javascript object in Knockout.js". The extension will then wrap every value in the appropriate Knockout.js observable and paste the result below the object you selected. 
 
-The extension will wrap every value in the appropriate Knockout.js observable and paste the result below the object you selected. If you execute the extension on this code:
+For instance, if you execute the command after selecting this:
 
 ```JavaScript
 const obj = {
@@ -56,3 +56,5 @@ const obj = const obj = {
     ]),
 }
 ```
+
+If you'd like to add functionality, feel free to make a pull request.
