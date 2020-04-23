@@ -14,6 +14,11 @@ const obj = {
     key4: {
       innerKey: "value",
     },
+    key5: [
+      {
+        innerKey: true,
+      },
+    ],
 }
 ```
 
