@@ -40,7 +40,7 @@ const obj = {
       },
     ],
 }
-const obj = const obj = {
+const obj = {
     key: ko.observable("string"),
     key2: ko.observable(0),
     key3: ko.observableArray([
